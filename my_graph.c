@@ -31,7 +31,7 @@ int main (void)
             
             //int a = shortPathMat(graph,i,j);
             //printf("%d" , a);
-            if (isPath(graph, i, j) == 0)
+            if (isPath( i, j) == 0)
             {
                 printf("False\n");
             }
@@ -49,7 +49,7 @@ int main (void)
             int j;
             scanf("%d", &j);
            // printf("%d", j);
-            int weight = shortPathMat(graph, i, j);
+            int weight = getweight(i,j);
             if(weight == 0 || i==j)
             {
                 printf("-1\n");
