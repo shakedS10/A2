@@ -94,49 +94,11 @@ int main ()
     int weights[SIZEP];
     for (int i = 0; i < SIZEP; i++)
     {
-       /* scanf(" %c", &act);
-        if (act == 'a')
-        {
-            scanf("%d", &num);
-            values[0] = num;
-            scanf("%d", &num);
-            weights[0] = num;
-        }
-        if (act == 'b')
-        {
-            scanf("%d", &num);
-            values[1] = num;
-              scanf("%d", &num);
-              weights[1] = num;
-        }
-        if (act == 'c')
-        {
-            scanf("%d", &num);
-            values[2] = num;
-            scanf("%d", &num);
-            weights[2] = num;
-        }
-        if (act == 'd')
-        {
-            scanf("%d", &num);
-            values[3] = num;
-            scanf("%d", &num);
-            weights[3] = num;
-        }
-        if (act == 'e')
-        {
-            scanf("%d", &num);
-            values[4] = num;
-            scanf("%d", &num);
-            weights[4] = num;
-        }
-        */
         scanf("%s", products[i]);
         scanf("%d", &num);
         values[i] = num;
         scanf("%d", &num);
-        weights[i] = num;
-       
+        weights[i] = num;  
     }
     knapsack(values, weights, selected_bool);
 
