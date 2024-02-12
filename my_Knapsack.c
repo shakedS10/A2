@@ -9,9 +9,9 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
     int valueBefore;
     int weightBefore;
     int matrix[SIZEP+1][MAXW+1];
-    for (int i = 0; i < SIZEP; i++)
+    for (int i = 0; i <= SIZEP; i++)
     {
-        for (int j = 0; j < MAXW; j++)
+        for (int j = 0; j <= MAXW; j++)
         {
             matrix[i][j] = 0;
         }
