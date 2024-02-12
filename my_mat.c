@@ -25,12 +25,9 @@ int shortPathMat(int g[MAT_L][MAT_L], int u, int v)
     {
         for (int j = 0; j < MAT_L; j++)
         {
-            num = g[i][j];
-            graph[i][j] = num;
-            if(i!=j && graph[i][j]==0)
-            {
-                graph[i][j] = INF;
-            }
+            
+            graph[i][j] = g[i][j];
+           
         }
     } 
     for (int k = 0; k<MAT_L; k++)
@@ -40,7 +37,14 @@ int shortPathMat(int g[MAT_L][MAT_L], int u, int v)
             for (int j = 0; j<MAT_L; j++)
             {
                 
-                graph[i][j] = MIN(graph[i][j], graph[i][k] + graph[k][j]);
+               if(graph[i][k]!=0 && graph[k][j]!=0)
+               {
+                   num = MIN(graph[i][j], graph[i][k]+graph[k][j]);
+                   if(num != graph[i][j] || graph[i][j]==0)
+                   {
+                       graph[i][j] = graph[i][k]+ graph[k][j];
+                   }   
+               }
                 
             }
 
@@ -53,7 +57,7 @@ int shortPathMat(int g[MAT_L][MAT_L], int u, int v)
 int isPath(int g[MAT_L][MAT_L], int u, int v)
 {
     
-    if (shortPathMat(g,u,v) == 0)
+    if (shortPathMat(g,u,v) == 0 || u == v)
     {
         return 0;
     }
@@ -63,9 +67,4 @@ int isPath(int g[MAT_L][MAT_L], int u, int v)
     }
 }
 
-int pathWeight(int g[MAT_L][MAT_L], int u, int v)
-{
-     return shortPathMat(g,u,v);
-   
-}
 

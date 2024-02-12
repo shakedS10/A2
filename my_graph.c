@@ -24,11 +24,13 @@ int main (void)
         {
             int i ;
             scanf("%d", &i);
+            //printf("%d", i);
             int j;
             scanf("%d", &j);
+           // printf("%d", j);
             
-            int a = shortPathMat(graph,i,j);
-            printf("%d" , a);
+            //int a = shortPathMat(graph,i,j);
+            //printf("%d" , a);
             if (isPath(graph, i, j) == 0)
             {
                 printf("False\n");
@@ -43,12 +45,12 @@ int main (void)
         {
             int i;
              scanf("%d", &i);
-             printf("%d", i);
+            // printf("%d", i);
             int j;
             scanf("%d", &j);
-            printf("%d", j);
-            int weight = pathWeight(graph, i, j);
-            if(weight == 0)
+           // printf("%d", j);
+            int weight = shortPathMat(graph, i, j);
+            if(weight == 0 || i==j)
             {
                 printf("-1\n");
             }

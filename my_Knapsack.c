@@ -5,6 +5,7 @@
 
 int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 {
+    
     int valueBefore;
     int weightBefore;
     int matrix[SIZEP+1][MAXW+1];
@@ -78,6 +79,7 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 
 int main ()
 {
+    char products[SIZEP][MAXW+1];
     char act;
     int num;
     int selected_bool[SIZEP] = {0, 0, 0, 0, 0};
