@@ -1,5 +1,4 @@
 #include <stdio.h>
-//#include "my_mat.h"
 #define MAT_L 10
 #define MIN(a, b) (((a) < (b)) ? (a) : (b))
 #define INF __INT_MAX__
@@ -7,7 +6,6 @@ int sp_graph[MAT_L][MAT_L];
 
 void shortPathMat(int g[MAT_L][MAT_L])
 {
-    //int graph[MAT_L][MAT_L];
     int num;
     for (int i = 0; i< MAT_L; i++)
     {
@@ -38,7 +36,6 @@ void shortPathMat(int g[MAT_L][MAT_L])
 
         }
     }
-    //return sp_graph[u][v];
        
 }
 
@@ -53,7 +50,6 @@ void cr_mat(int graph[MAT_L][MAT_L])
         }
     } 
     shortPathMat(graph);   
-    //return graph[0][0];
 }
 
 

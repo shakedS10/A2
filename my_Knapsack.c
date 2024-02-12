@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 #define SIZEP 5
 #define MAXW 20
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
-
+char products[SIZEP][MAXW+1];
 int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 {
     
@@ -55,23 +56,23 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
         {
             if (i == 0)
             {
-                printf(" a");
+                printf(" %s", products[1]);
             }
             if (i == 1)
             {
-                printf(" b");
+                printf(" %s", products[2]);
             }
             if (i == 2)
             {
-                printf(" c");
+                printf(" %s", products[3]);
             }
             if (i == 3)
             {
-                printf(" d");
+                printf(" %s", products[4]);
             }
             if (i == 4)
             {
-                printf(" e");
+                printf(" %s", products[5]);
             }
             
         }
@@ -84,15 +85,16 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 
 int main ()
 {
-    //char products[SIZEP][MAXW+1];
-    char act;
+    
+    
+    //char act;
     int num;
     int selected_bool[SIZEP] = {0, 0, 0, 0, 0};
     int values[SIZEP];
     int weights[SIZEP];
     for (int i = 0; i < SIZEP; i++)
     {
-        scanf(" %c", &act);
+       /* scanf(" %c", &act);
         if (act == 'a')
         {
             scanf("%d", &num);
@@ -128,7 +130,12 @@ int main ()
             scanf("%d", &num);
             weights[4] = num;
         }
-        
+        */
+        scanf("%s", products[i]);
+        scanf("%d", &num);
+        values[i] = num;
+        scanf("%d", &num);
+        weights[i] = num;
        
     }
     knapsack(values, weights, selected_bool);
