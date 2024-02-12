@@ -56,23 +56,23 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
         {
             if (i == 0)
             {
-                printf(" %s", products[1]);
+                printf(" %s", products[0]);
             }
             if (i == 1)
             {
-                printf(" %s", products[2]);
+                printf(" %s", products[1]);
             }
             if (i == 2)
             {
-                printf(" %s", products[3]);
+                printf(" %s", products[2]);
             }
             if (i == 3)
             {
-                printf(" %s", products[4]);
+                printf(" %s", products[3]);
             }
             if (i == 4)
             {
-                printf(" %s", products[5]);
+                printf(" %s", products[4]);
             }
             
         }
