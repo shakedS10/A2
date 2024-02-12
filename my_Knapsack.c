@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define SIZEP 5
 #define MAXW 20
-#define MAX(a, b) (a > b ? a : b)
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 {
@@ -9,23 +9,28 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
     int valueBefore;
     int weightBefore;
     int matrix[SIZEP+1][MAXW+1];
-    for (int i = 0; i <= SIZEP; i++)
+    for (int i = 0; i < SIZEP; i++)
     {
-        for (int j = 0; j <= MAXW; j++)
+        for (int j = 0; j < MAXW; j++)
+        {
+            matrix[i][j] = 0;
+        }
+        
+    }
+    
+    for (int i = 1; i <= SIZEP; i++)
+    {
+        for (int j = 1; j <= MAXW; j++)
         {
             valueBefore = values[i-1];
             weightBefore = weights[i-1];
-            if (i == 0 || j == 0)
-            {
-                matrix[i][j] = 0;
-            }
-            else if (weightBefore <= j)
+            if (weightBefore <= j)
             {
                 matrix[i][j] = MAX(valueBefore + matrix[i-1][j-weightBefore], matrix[i-1][j]);
             }
             else
             {
-                matrix[i][j] = matrix[i-1][j];
+                matrix[i][j] = matrix[i][j-1];
             }
         }
 
@@ -79,7 +84,7 @@ int knapsack(int values[SIZEP], int weights[SIZEP], int selected_bool[SIZEP])
 
 int main ()
 {
-    char products[SIZEP][MAXW+1];
+    //char products[SIZEP][MAXW+1];
     char act;
     int num;
     int selected_bool[SIZEP] = {0, 0, 0, 0, 0};
@@ -87,7 +92,7 @@ int main ()
     int weights[SIZEP];
     for (int i = 0; i < SIZEP; i++)
     {
-        scanf("%c", &act);
+        scanf(" %c", &act);
         if (act == 'a')
         {
             scanf("%d", &num);
